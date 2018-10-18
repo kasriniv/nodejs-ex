@@ -99,12 +99,7 @@ app.get('/v1/participants',function(req, res) {
      .send(JSON.stringify(response))
     .end();
 });
-app.get('/v2/participants',function(req, res) {
-  var response = [ "Kavitha v2.0 here", "Kavitha S 2.0 here" ];
-  res.type('application/json')
-     .send(JSON.stringify(response))
-     .end();
-});
+
 
 app.get('/pagecount', function (req, res) {
   // try to initialize the db on every request if it's not already
