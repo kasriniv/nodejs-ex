@@ -93,13 +93,13 @@ app.get('/', function (req, res) {
     res.render('index.html', { pageCountMessage : null});
   }
 });
-app.get("/v1/participants",function(req, res) {
+app.get('/v1/participants',function(req, res) {
   var response = [ "Kavitha v1.0", "Kavitha S 1.0" ];
   res.type('application/json')
      .send(JSON.stringify(response))
-     .end();
+    .end();
 });
-app.get("/v2/participants",function(req, res) {
+app.get('/v2/participants',function(req, res) {
   var response = [ "Kavitha v2.0 here", "Kavitha S 2.0 here" ];
   res.type('application/json')
      .send(JSON.stringify(response))
