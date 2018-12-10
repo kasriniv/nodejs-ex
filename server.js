@@ -129,6 +129,7 @@ app.post ('/hi', function (req, res){
     collectRequestData(req, result => {
         console.log(result);
         res.end('ok');
+        });
 });
 
 
