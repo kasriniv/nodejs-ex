@@ -3,7 +3,7 @@ var express = require('express'),
     app     = express(),
     //bodyparser =body-parser(),
     morgan  = require('morgan');
-
+const bodyParser = require('body-parser');
     
 Object.assign=require('object-assign')
 
