@@ -125,7 +125,7 @@ app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
    
      console.log(req.is('text/*'));
-    const postBody = request.body;
+    const postBody = req.body;
   console.log(postBody);
     res.end ('ok');
 });
