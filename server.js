@@ -125,7 +125,7 @@ app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
    
      console.log(req.is('text/*'));
- app.use(require('connect').bodyParser());
+ app.use(express.bodyParser());
 app.use(bodyParser.text({ type: 'text/html' }));
     console.log(req.body);
     res.end ('whatever dude');
