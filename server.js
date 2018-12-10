@@ -1,7 +1,7 @@
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
-    bodyparser =body-parser(),
+    //bodyparser =body-parser(),
     morgan  = require('morgan');
 
     
@@ -127,6 +127,7 @@ app.post ('/hi', function (req, res){
     //console.log(req);
     console.log ('body of request');
      console.log(req.is('text/*'));
+    console.log(res.headers);
     
     res.end();
 });
