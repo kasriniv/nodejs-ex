@@ -116,6 +116,11 @@ app.get('/pagecount', function (req, res) {
     res.send('{ pageCount: -1 }');
   }
 });
+//trying post
+app.post ('/hi', function (req, res){
+    console.log ('got a post message kavitha');
+    console.log(JSON.stringify(req));
+});
 
 // error handling
 app.use(function(err, req, res, next){
