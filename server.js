@@ -144,9 +144,9 @@ function collectRequestData(request, callback) {
             callback(parse(body));
         });
    // }
-    else {
-        callback(null);
-    }
+   // else {
+       // callback(null);
+    //}
 }
 
 // error handling
