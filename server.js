@@ -123,7 +123,7 @@ app.post ('/hi', function (req, res){
     console.log ('all of the request');
     console.log(req);
     console.log ('body of request');
-    console.log(req.body);
+    var text=req.body;
     res.end();
 });
 
