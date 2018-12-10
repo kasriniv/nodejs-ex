@@ -126,7 +126,7 @@ app.post ('/hi', function (req, res){
    
      console.log(req.is('text/*'));
   
-//app.use(bodyParser.text({ type: 'text/html' }));
+app.use(bodyParser.text({ type: 'text/html' }));
     console.log(req.body);
     res.end ('whatever dude');
     console.log ('done');
