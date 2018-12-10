@@ -119,7 +119,8 @@ app.get('/pagecount', function (req, res) {
 //trying post
 app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
-    //console.log(JSON.stringify(req));
+    console.log(JSON.stringify(req));
+    res.end();
 });
 
 // error handling
