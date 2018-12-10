@@ -125,14 +125,9 @@ app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
    
      console.log(req.is('text/*'));
-    
-   app.use(function (req, res) {
-       console.log ('magic here');
-  res.setHeader('Content-Type', 'text/plain');
-  res.write('you posted:\n');
+
        console.log(req.body);
-  res.end(req.body);
- });
+
     res.end ('whatever dude');
     console.log ('done');
 });
