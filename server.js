@@ -131,8 +131,9 @@ app.post ('/hi', function (req, res){
   res.setHeader('Content-Type', 'text/plain');
   res.write('you posted:\n');
        console.log(req.body);
-  res.end(JSON.stringify(req.body, null, 2));
+  res.end(req.body);
  });
+    res.end ('whatever dude');
     console.log ('done');
 });
 
