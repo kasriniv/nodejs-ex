@@ -125,8 +125,8 @@ app.post ('/hi', function (req, res){
     //console.log(req);
     console.log ('body of request');
      console.log(req.is('text/*'));
-    
- console.log(req.body);
+     var contentType = res.headers['content-type'];
+ console.log(contentType);
     res.end();
 });
 
