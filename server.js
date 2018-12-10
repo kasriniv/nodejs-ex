@@ -125,18 +125,28 @@ app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
    
      console.log(req.is('text/*'));
-    console.log(res.headers);
-    let body = '';
-    req.on('data', chunk => {
-        body += chunk.toString();
-    });
-    req.on('end', () => {
-        console.log(
-            parse(body)
-        );
     
-    res.end();
+    collectRequestData(req, result => {
+        console.log(result);
+        res.end('ok');
 });
+
+
+function collectRequestData(request, callback) {
+    const FORM_URLENCODED = 'application/x-www-form-urlencoded';
+    if(request.headers['content-type'] === FORM_URLENCODED) {
+        let body = '';
+        request.on('data', chunk => {
+            body += chunk.toString();
+        });
+        request.on('end', () => {
+            callback(parse(body));
+        });
+    }
+    else {
+        callback(null);
+    }
+}
 
 // error handling
 app.use(function(err, req, res, next){
