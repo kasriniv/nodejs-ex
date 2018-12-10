@@ -127,12 +127,13 @@ app.post ('/hi', function (req, res){
      console.log(req.is('text/*'));
     
    app.use(function (req, res) {
+       console.log ('magic here');
   res.setHeader('Content-Type', 'text/plain');
   res.write('you posted:\n');
        console.log(req.body);
   res.end(JSON.stringify(req.body, null, 2));
  });
-    
+    console.log ('done');
 });
 
 
