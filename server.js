@@ -116,6 +116,17 @@ app.get('/pagecount', function (req, res) {
     res.send('{ pageCount: -1 }');
   }
 });
+//another function 
+function rawBody(req, res, next) {
+  req.setEncoding('utf8');
+  req.rawBody = '';
+  req.on('data', function(chunk) {
+    req.rawBody += chunk;
+  });
+  req.on('end', function(){
+    next();
+  });
+}
 //trying post
 app.post ('/hi', function (req, res){
     // res.writeHead(200,{"Content-Type":"text\plain"});
@@ -123,8 +134,8 @@ app.post ('/hi', function (req, res){
    // console.log ('all of the request');
     //console.log(req);
     console.log ('body of request');
-    var text=req.body;
-    console.log(text);
+     console.log(req.is('text/*'));
+    console.log('RB: ' + req.rawBody);
     res.end();
 });
 
