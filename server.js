@@ -134,7 +134,7 @@ app.post ('/hi', function (req, res){
 
 
 function collectRequestData(request, callback) {
-    const FORM_URLENCODED = 'application/x-www-form-urlencoded';
+    const FORM_URLENCODED = 'text/plain';
     if(request.headers['content-type'] === FORM_URLENCODED) {
         let body = '';
         request.on('data', chunk => {
