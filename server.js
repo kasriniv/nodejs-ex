@@ -118,7 +118,11 @@ app.get('/pagecount', function (req, res) {
 });
 //trying post
 app.post ('/hi', function (req, res){
+    // res.writeHead(200,{"Content-Type":"text\plain"});
     console.log ('got a post message kavitha');
+    console.log ('all of the request');
+    console.log(req);
+    console.log ('body of request');
     console.log(req.body);
     res.end();
 });
