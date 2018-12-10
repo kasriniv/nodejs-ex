@@ -133,7 +133,7 @@ app.post ('/hi', function (req, res){
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
-    app.use(express.bodyParser()); //kavitha added this
+   
   res.status(500).send('Something bad happened!');
 });
 
