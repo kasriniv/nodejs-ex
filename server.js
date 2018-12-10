@@ -134,8 +134,8 @@ app.post ('/hi', function (req, res){
 
 
 function collectRequestData(request, callback) {
-    const FORM_URLENCODED = 'text/plain';
-    if(request.headers['content-type'] === FORM_URLENCODED) {
+  //  const FORM_URLENCODED = 'text/plain';
+   // if(request.headers['content-type'] === FORM_URLENCODED) {
         let body = '';
         request.on('data', chunk => {
             body += chunk.toString();
@@ -143,7 +143,7 @@ function collectRequestData(request, callback) {
         request.on('end', () => {
             callback(parse(body));
         });
-    }
+   // }
     else {
         callback(null);
     }
