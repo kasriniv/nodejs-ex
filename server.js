@@ -126,7 +126,7 @@ app.post ('/hi', function (req, res){
    
      console.log(req.is('text/*'));
   
-app.use(bodyParser.text({ type: 'text/html' }));
+//app.use(bodyParser.text({ type: 'text/html' }));
     console.log(req.body);
     res.end ('whatever dude');
     console.log ('done');
@@ -137,6 +137,7 @@ app.use(bodyParser.text({ type: 'text/html' }));
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
+    bodyParser.urlencoded({ extended: true });
 
   res.status(500).send('Something bad happened!');
 });
