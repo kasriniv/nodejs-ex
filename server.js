@@ -131,26 +131,11 @@ app.post ('/hi', function (req, res){
 });
 
 
-function collectRequestData(request, callback) {
-  //  const FORM_URLENCODED = 'text/plain';
-   // if(request.headers['content-type'] === FORM_URLENCODED) {
-        let body = '';
-        request.on('data', chunk => {
-            body += chunk.toString();
-        });
-        request.on('end', () => {
-            callback(parse(body));
-        });
-   // }
-   // else {
-       // callback(null);
-    //}
-}
 
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
-   
+bodyParser.urlencoded({ extended: false });
   res.status(500).send('Something bad happened!');
 });
 
