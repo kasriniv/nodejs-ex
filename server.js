@@ -123,11 +123,17 @@ app.get('/pagecount', function (req, res) {
 app.post ('/hi', function (req, res){
     // res.writeHead(200,{"Content-Type":"text\plain"});
     console.log ('got a post message kavitha');
-   // console.log ('all of the request');
-    //console.log(req);
-    console.log ('body of request');
+   
      console.log(req.is('text/*'));
     console.log(res.headers);
+    let body = '';
+    req.on('data', chunk => {
+        body += chunk.toString();
+    });
+    req.on('end', () => {
+        console.log(
+            parse(body)
+        );
     
     res.end();
 });
