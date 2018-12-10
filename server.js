@@ -125,11 +125,9 @@ app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
    
      console.log(req.is('text/*'));
-    
-    collectRequestData(req, result => {
-        console.log(result);
-        res.end('ok');
-        });
+    const postBody = request.body;
+  console.log(postBody);
+    res.end ('ok');
 });
 
 
