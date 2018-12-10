@@ -125,9 +125,14 @@ app.post ('/hi', function (req, res){
     console.log ('got a post message kavitha');
    
      console.log(req.is('text/*'));
-    const postBody = req.body;
-  console.log(postBody);
-    res.end ('ok');
+    
+   app.use(function (req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.write('you posted:\n');
+       console.log(req.body);
+  res.end(JSON.stringify(req.body, null, 2));
+ });
+    
 });
 
 
@@ -135,7 +140,7 @@ app.post ('/hi', function (req, res){
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
-bodyParser.urlencoded({ extended: false });
+
   res.status(500).send('Something bad happened!');
 });
 
