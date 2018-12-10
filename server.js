@@ -116,18 +116,8 @@ app.get('/pagecount', function (req, res) {
     res.send('{ pageCount: -1 }');
   }
 });
-//another function 
-function rawBody(req, res, next) {
-  req.setEncoding('utf8');
-  req.rawBody = '';
-  req.on('data', function(chunk) {
-    req.rawBody += chunk;
-  });
-  req.on('end', function(){
-    next();
-  });
-}
-//trying post
+
+//trying post kavitha added
 app.post ('/hi', function (req, res){
     // res.writeHead(200,{"Content-Type":"text\plain"});
     console.log ('got a post message kavitha');
@@ -135,13 +125,15 @@ app.post ('/hi', function (req, res){
     //console.log(req);
     console.log ('body of request');
      console.log(req.is('text/*'));
-    console.log('RB: ' + req.rawBody);
+    
+ console.log(req.body);
     res.end();
 });
 
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
+    app.use(express.bodyParser()); //kavitha added this
   res.status(500).send('Something bad happened!');
 });
 
