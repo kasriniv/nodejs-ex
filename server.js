@@ -98,7 +98,7 @@ app.get('/', function (req, res) {
   }
 });
 app.get('/participants',function(req, res) {
-  var response = [ "Kavitha v1.0", "V1 of participants" ];
+  var response = [ "Kavitha v2", "V2 of participants" ];
   res.type('application/json')
      .send(JSON.stringify(response))
     .end();
