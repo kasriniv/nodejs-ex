@@ -97,7 +97,7 @@ app.get('/', function (req, res) {
     res.render('index.html', { pageCountMessage : null});
   }
 });
-app.get('/participants',function(req, res) {
+app.get('/v2/participants',function(req, res) {
   var response = [ "Kavitha v2", "V2 of participants" ];
   res.type('application/json')
      .send(JSON.stringify(response))
